@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {box-sizing: border-box}
+    body {font-family: "Lato", sans-serif;}
+
+    /* Style the tab */
+    
+    
+.header {
+    background:#128277;
+    
+      padding:2px;
+      background:#1ee0ce;
+      color: white;
+      font-size: 15px;
+    }
+    .tab {
+      float: left;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      width: 30%;
+      height: 100%;
+    }
+    
+    .row-md-3{
+      float: left;
+      width: 53.33%;
+      padding: 10px;
+      height: 100%; /* Should be removed. Only for demonstration */
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      display: block;
+      background-color: inherit;
+      color: black;
+      padding: 22px 16px;
+      width: 200%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      align-content: left;
+      float: right;
+      padding: 0px 12px;
+      border: 1px solid #ccc;
+      width: 70%;
+      height: 100%x;
+      border-top: 30 px;
+    }
+
+    .btn-group:{
+      content: " ";
+      clear: both;
+      display: table;
+    }
+
+ 
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("div#jon").hide();
+  $("input[name=choose]").on("click",function(){
+    var selected=$("input[name=choose]:checked").val();
+    if(selected=="Yes"){
+      $("div#jon").show();
+      }else if(selected=="No"){
+      $("div#jon").hide();
+    }
+  });
+ });
+
+$(document).ready(function(){
+  $(".btn1").click(function(){
+    $("#Conference").hide();
+  });
+  $(".btn2").click(function(){
+    $("#Conference").show();
+  });
+  $(".btn2").click(function(){
+    $("#Journal").hide();
+  });
+  $(".btn1").click(function(){
+    $("#Journal").show();
+  });
+});
+
+$(document).ready(function(){
+  $(".b1").click(function(){
+    $("#Competetive").show();
+  });
+  $(".b1").click(function(){
+    $("#Awards").hide();
+  });
+  $(".b1").click(function(){
+    $("#Others").hide();
+  });
+  $(".b2").click(function(){
+    $("#Awards").show();
+  });
+  $(".b2").click(function(){
+    $("#Competetive").hide();
+  });
+  $(".b2").click(function(){
+    $("#Others").hide();
+  });
+  $(".b3").click(function(){
+    $("#Others").show();
+  });
+  $(".b3").click(function(){
+    $("#Awards").hide();
+  });
+  $(".b3").click(function(){
+    $("#Competetive").hide();
+  });
+});
+</script>
+</head>
+<body bgcolor="#dffcfb" >
+
+  <div class="header">
+
+    <h1><center>WELCOME</center></h1>
+    <p>welcome faculty NAME</p>
+    <p align="right"><button>LOGOUT</button> </p>
+  </div>
+
+  <div class="tab">
+    <div class=row-md-3> 
+      <button class="tablinks" onclick="openItem(event, 'WorkShop')">WorkShop</button>
+      <button class="tablinks" onclick="openItem(event, 'Paper Publication')">Paper Publication</button>
+      <button class="tablinks" onclick="openItem(event, 'Acheivements')">Acheivement</button>
+      <button class="tablinks" onclick="openItem(event, 'Guest Lecture')">Guest Lecture</button>
+      <button class="tablinks" onclick="openItem(event, 'NPTEL')">NPTEL</button>
+      <button class="tablinks" onclick="openItem(event, 'Industry / Sabattical Research Training')">Industry / Sabattical Research Training</button>
+    </div>
+  </div>
+  <div class="tabcontent">
+  <p id="first"> choose a menu item </p>
+</div>
+  <div id="WorkShop" class="tabcontent">
+    <h3>WorkShop</h3>
+    <label>Name Of The Faculty:</label>
+    <input type="text" name=""><br><br>
+    <label>Emp Id:</label>
+    <input type="text" name=""><br><br>
+    <label>Choose Academicyear <input type="date" name=""></label><br><br>
+
+    <label>Event Attended:
+      <select>
+        <option>FDP/FIP</option>
+        <option>WORKSHOP</option>
+        <option>TRAINING</option>
+      </select></label><br><br>
+      <label>Tittle of the event</label>
+      <input type="text" name=""><br><br>
+      <label>Name Of The Institute Organised The Event</label>
+      <input type="text" name=""><br><br>
+      <label>Place Of The Event Organised</label>
+      <input type="text" name=""><br><br>
+      <label>Duration Date-from:<input type="date" name=""></label><br><br>
+      <label>to:<input type="date" name=""></label><br><br>
+      <label>Total Number Of Days:
+        <input type="number" min="1" max="100">
+      </label>
+      <br><br>
+      <label>Upload Certificate:</label>
+      <input type="file" id="myFile"><br><br>
+      <label>Remarks</label>
+      <input type="text" name=""><br><br>
+      <center><button>submit</button></center>
+    </div>
+    <div id="Paper Publication" class="tabcontent">
+      <h3>Paper Publication</h3>
+
+
+
+      <div id="but" class="btn-group" align="center" >
+        <button class="btn1" >Journal</button>&nbsp
+        <button class="btn2" >Conference</button> 
+      </div>
+
+
+
+   <div id="Journal" style="display: none;">  
+      <select>
+        <option>National</option>
+        <option>International</option></select>
+      </select>      
+    </label><br><br>
+    <label>Name of the Journal:</label>
+    <input type="text" name=""><br><br>
+    <label>Name of the Paper:</label>
+    <input type="text" name=""><br><br>
+    <label>Co-author(if any):</label>
+    <input type="text" name=""><br><br>
+    <label>Volume no:</label>
+    <input type="text" name=""><br><br>
+    <label>Issue no:</label>
+    <input type="text" name=""><br><br>
+    <label>Year:</label>
+    <input type="text" name=""><br><br>
+    <label>Impact fact:</label>
+    <input type="text" name=""><br><br>
+    <label>Type of the for:
+      <input type="checkbox" name="" value="">UGC
+      <input type="checkbox" name="" value="">SCI/SCOPUS
+      <input type="checkbox" name=""value="">WPS
+
+    </label><br><br>
+    <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+   </div>
+   <div id="Conference" style="display: none;">    
+    <select>
+      <option>National</option>
+      <option>International</option></select>
+    </select><br></br>
+    <label>Name of the Conference:</label>
+    <input type="text" name=""><br></br>
+    <label>Name of the Paper:</label>
+    <input type="text" name=""><br></br>
+    <label>Venue of the conference:</label>
+    <input type="text" name=""><br></br>
+    <label>Date from:</label>
+    <input type="text" name=""><br></br>
+    <label>Number of Days:</label>
+    <input type="text" name=""><br></br>
+    <label>Is Conference associated with:</label>
+    <input type="radio" name="choose" value="Yes" >Yes
+    <input type="radio" name="choose" value="No" > No<br></br>
+
+    <div id="jon">
+    <label>Name of the Journal:</label>
+    <input type="text" name=""><br><br>
+    <label>Name of the Paper:</label>
+    <input type="text" name=""><br><br>
+    <label>Co-author(if any):</label>
+    <input type="text" name=""><br><br>
+    <label>Volume no:</label>
+    <input type="text" name=""><br><br>
+    <label>Issue no:</label>
+    <input type="text" name=""><br><br>
+    <label>Year:</label>
+    <input type="text" name=""><br><br>
+    <label>Impact fact:</label>
+    <input type="text" name=""><br><br>
+    <label>Type of the for:
+      <input type="checkbox" name="" value="">UGC
+      <input type="checkbox" name="" value="">SCI/SCOPUS
+      <input type="checkbox" name=""value="">WPS
+    </div>
+
+
+    </label><br><br>
+    <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+  </div>  
+  </div>
+  
+  <div id="Acheivements" class="tabcontent">
+    <h3>Acheivements</h3>
+  <center>
+     <button class="b1" >Competetive</button>
+      <button class="b2" >Awards</button>
+      <button class="b3" >Others</button>
+      </center>
+    
+      <div id="Competetive" style="display: none;">
+            <label>Competetive Name :
+      <select>
+        <option>NET</option>
+        <option>SET</option>
+        <option>GATE</option>
+      </select></label><br><br>
+      <label>Year:<input type="date" name=""></label><br><br>
+      <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+      </div>
+      <div id="Awards" style="display: none;">
+      <label>Name of the Award :</label>
+      <input type="text" name=""><br></br>
+      <label>Issued By: </label>
+      <input type="text" name=""><br><br>
+      <label>Date and Year:<input type="date" name=""></label><br><br>
+      <label>Venue: </label>
+      <input type="text" name=""><br><br>
+      <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+      </div>
+      <div id="Others" style="display: none;">
+      <label>Name of the Achievement :</label>
+      <input type="text" name=""><br></br>
+      <label>Issued By: </label>
+      <input type="text" name=""><br><br>
+      <label>Date and Year:<input type="date" name=""></label><br><br>
+      <label>Venue: </label>
+      <input type="text" name=""><br><br>
+      <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+      </div>
+  </div>
+
+  <div id="Guest Lecture" class="tabcontent">
+    <h3>Guest Lecture</h3>
+   <label>Topic:</label>
+      <input type="text" name=""><br><br>
+      <label>College Name:</label>
+      <input type="text" name=""><br><br>
+      <label>Duration Date-from:<input type="date" name=""></label><br><br>
+      <label>to:<input type="date" name=""></label><br><br>
+      <label>Total Number Of Days:
+        <input type="number" min="1" max="100">
+      </label>
+      <br><br>
+      <label>Upload Certificate:</label>
+      <input type="file" id="myFile"><br><br>
+      <center><button>submit</button></center>
+  </div>
+
+  <div id="NPTEL" class="tabcontent">
+    <h3>NPTEL</h3>
+    <label>Session:          </label>
+    <input type="text" name=""><br><br>
+    <label> Year: <input type="date" name="">
+    </label><br><br>
+    <label>Name of the Subject:</label>
+    <input type="text" name=""><br><br>
+    <label>Score:            </label>
+    <input type="text" name=""><br></br>
+    <label>Grade:       
+      <select>
+        <option>SUCCESSFULLY COMPLETED</option>
+        <option>ELITE</option>
+        <option>SILVER</option>
+        <option>GOLD</option>
+      </select></label><br></br>
+      <label>Remarks: </label>
+      <input type="text" name=""><br><br>
+      <label>Upload:</label>
+    <input type="file" id="myFile">
+    <br><br>
+    <center><button>submit</button></center>
+    </div>
+
+    <div id="Industry / Sabattical Research Training" class="tabcontent">
+      <h3>Industry / Sabattical Research Training</h3>
+      <label>Industry/Institute Name:</label>
+      <input type="text" name=""><br><br>
+      <label>Worked on the Domain:</label>
+      <input type="text" name=""><br><br>
+      <label>Duration Date-from:<input type="date" name=""></label><br><br>
+      <label>to:<input type="date" name=""></label><br><br>
+      <label>Total Number Of Days:
+        <input type="number" min="1" max="100">
+      </label>
+      <br><br>
+      <label>Upload Certificate:</label>
+      <input type="file" id="myFile"><br><br>
+      <center><button>submit</button></center>
+    </div>
+
+    
+
+    <script>
+
+      
+      function openItem(evt, ItemName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(ItemName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+      <script >
+
+      function openselect(evt, selectName){
+        var j,btn-group;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("btn-group");
+        for (i = 0; i < btn-group.length; i++) {
+          tablinks[i].className = btn-group[i].className.replace(" active", "");
+        }
+        document.getElementById(selectName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+      }
+
+
+</script>
+
+</body>
+</html> 
+
+
